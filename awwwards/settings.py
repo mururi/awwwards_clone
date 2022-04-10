@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'awwwards_app.apps.AwwwardsAppConfig',
     'cloudinary',
+    'bootstrap5',
+
+
 ]
 
 MIDDLEWARE = [
