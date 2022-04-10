@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'awwwards_app.apps.AwwwardsAppConfig'
+    'awwwards_app.apps.AwwwardsAppConfig',
     'cloudinary',
 ]
 
