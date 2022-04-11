@@ -156,3 +156,6 @@ cloudinary.config(
   api_secret = config('CLOUDINARY_API_SECRET'),
   secure = config('CLOUDINARY_SECURE')
 )
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
