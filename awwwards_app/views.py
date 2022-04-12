@@ -20,7 +20,7 @@ def register(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {"form": form})
 
-@login_required(login_url = '/register')
+@login_required(login_url = '/login')
 def submit(request):
     current_user = request.user
     if request.method == 'POST':
