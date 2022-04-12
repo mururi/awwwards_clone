@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Profile
+from .models import Profile, Project
 from django.contrib.auth.models import User
 
 class ProfileTestClass(TestCase):
@@ -28,10 +28,56 @@ class ProfileTestClass(TestCase):
         self.assertTrue(self.new_profile, Profile)
 
     def test_delete_method(self):
+        '''
+        Method to test the delete profile method
+        '''
         Profile.delete_profile(self.new_profile.id)
         profiles = Profile.objects.all()
         self.assertTrue(len(profiles) == 0)
 
     def test_get_profile_by_id(self):
+        '''
+        Method to test the get_profile_by_id method
+        '''
         profile = Profile.get_profile_by_id(1)
         self.assertEqual(profile.full_name, 'John Doe')
+
+class ProjectTestClass(TestCase):
+    '''
+    Test class to test the behaviour of the Project class
+    '''
+
+    def setUp(self):
+        '''
+        Set up method to run before each test case
+        '''
+       
+        # Creating a new user
+        self.new_user = User(username = 'Doe', password = 'pass', email = 'johndoe@company.com')
+        self.new_user.save()
+
+        # Creating a new project
+        self.new_project = Project(id = 1, title = 'My project title', description = 'Test description', live_link = 'http://127.0.0.1:8000/', user = self.new_user)
+        self.new_project.save()
+
+    def test_instance(self):
+        '''
+        Method to test if the new_project object is an instance of the Project model
+        '''
+
+        self.assertTrue(self.new_project, Project)
+
+    def test_delete_project(self):
+        '''
+        Method to test the delete_project method
+        '''
+        Project.delete_project(self.new_project.id)
+        project = Project.objects.all()
+        self.assertTrue(len(project) == 0)
+
+    def test_get_project_by_id(self):
+        '''
+        Method to test the get_project_by_id method
+        '''
+        project = Project.get_project_by_id(1)
+        self.assertEqual(project.title, 'My project title')
