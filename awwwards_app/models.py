@@ -13,6 +13,22 @@ class Profile(models.Model):
     def __str__(self):
         return self.full_name
 
+    def save_profile(self):
+        self.save()
+
+    @classmethod
+    def delete_profile(cls, id):
+        '''
+        Method to delete a Profile object
+        '''
+        cls.objects.filter(id = id).delete()
+
+    @classmethod
+    def get_profile_by_id(cls, id):
+        '''
+        Method to get a Profile by its id
+        '''
+        return cls.objects.filter(id = id)[0]
 
 class Project(models.Model):
     title = models.CharField(max_length = 100)
