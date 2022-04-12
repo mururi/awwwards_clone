@@ -6,7 +6,13 @@
     {% for project in projects %}
     <div class="col-md-3">
       <div class="card">
-        <img src="{{ project.image.url }}" class="card-img-top" alt="...">
+        <div class="image">
+          <img src="{{ project.image.url }}" class="card-img-top image__img" alt="...">
+          <div class="image__overlay">
+            <a href="/" class="image__btn">Review</a>
+          </div>
+        </div>
+        
         <div class="card-body">
           <p class="card-title fw-bold">{{ project.title }}</p>
           <p class="card-text">{{ project.description }}</p>
