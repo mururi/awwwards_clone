@@ -13,3 +13,11 @@
   border-bottom: 1px solid #e6eaea;
   background-color: #F4F7F6;
 }
+
+.nav-link--styling {
+  color: rgba(0,0,0,.9);
+}
+
+.nav-link--styling:hover {
+  color: black;
+}
