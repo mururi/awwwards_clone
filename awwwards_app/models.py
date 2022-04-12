@@ -10,9 +10,6 @@ class Profile(models.Model):
     bio = models.TextField()
     user = models.OneToOneField(User, on_delete = models.CASCADE, related_name = 'profile', null = True)
 
-    def __str__(self):
-        return self.full_name
-
     def save_profile(self):
         self.save()
 
@@ -29,6 +26,9 @@ class Profile(models.Model):
         Method to get a Profile by its id
         '''
         return cls.objects.filter(id = id)[0]
+
+    def __str__(self):
+        return self.full_name
 
 class Project(models.Model):
     title = models.CharField(max_length = 100)
