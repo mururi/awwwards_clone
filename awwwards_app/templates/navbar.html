@@ -4,11 +4,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand fw-bold fs-3" href="/">awwwards.</a>
-    {% if user.is_authenticated %}
-    <a class="nav-link" href="/logout">Logout</a>
-    {% else %}
-    <a class="nav-link" href="/login">Register/Login</a>
-    {% endif %}
+    <div class="d-flex align-items-center">
+      {% if user.is_authenticated %}
+        <a class="nav-link" href="/logout">Logout</a>
+      {% else %}
+        <a class="nav-link" href="/login">Register/Login</a>
+      {% endif %}
+      <div>
+        <a href="/submit" class="nav-link">SUBMIT YOUR SITE!</a>
+      </div>
+    </div>
+    
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
