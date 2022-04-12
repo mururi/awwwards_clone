@@ -63,3 +63,20 @@ class Rate(models.Model):
     creativity = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(10)])
     project = models.ForeignKey(Project, on_delete = models.CASCADE, null = True)
     user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
+
+    def save_rate(self):
+        self.save()
+
+    @classmethod
+    def delete_rate(cls, id):
+        '''
+        Method to delete a Rate object
+        '''
+        cls.objects.filter(id = id).delete()
+
+    @classmethod
+    def get_rate_by_id(cls, id):
+        '''
+        Method to get a Rate by its id
+        '''
+        return cls.objects.filter(id = id)[0]
