@@ -8,9 +8,12 @@
       <div class="card">
         <img src="{{ project.image.url }}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-title fw-bold">{{ project.title }}</p>
           <p class="card-text">{{ project.description }}</p>
           <a href="{{ project.live_link }}" class="link-dark">Live link</a>
+        </div>
+        <div class="card-footer">
+          <small class="fw-bolder">BY {{ project.user.username|upper }}</small>
         </div>
       </div>
     </div>
