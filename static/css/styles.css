@@ -3,3 +3,12 @@
 * {
   font-family: 'Raleway', sans-serif;
 }
+
+.page-wrapper {
+  background-color: #F4F7F6;
+  min-height: 100vh;
+}
+
+.custom-nav {
+  border-bottom: 1px solid #e6eaea;
+}
